@@ -19,7 +19,7 @@ public class ModBlockEntities {
         SPRINKLER_BLOCK_ENTITY = Registry.register(
                 Registry.BLOCK_ENTITY_TYPE,
                 new Identifier(SprinklerzMod.MOD_ID, "sprinkler_block_entity"),
-                FabricBlockEntityTypeBuilder.create(SprinklerBlockEntity::new, COPPER_SPRINKLER, IRON_SPRINKLER, GOLD_SPRINKLER, NETHERITE_SPRINKLER).build()
+                FabricBlockEntityTypeBuilder.create(SprinklerBlockEntity::new, COPPER_SPRINKLER, IRON_SPRINKLER, GOLD_SPRINKLER, DIAMOND_SPRINKLER, NETHERITE_SPRINKLER).build()
         );
     }
 

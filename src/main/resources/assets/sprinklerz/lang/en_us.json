@@ -3,5 +3,7 @@
   "block.sprinklerz.copper_sprinkler": "Copper Sprinkler",
   "block.sprinklerz.iron_sprinkler": "Iron Sprinkler",
   "block.sprinklerz.gold_sprinkler": "Gold Sprinkler",
-  "block.sprinklerz.netherite_sprinkler": "Netherite Sprinkler"
+  "block.sprinklerz.diamond_sprinkler": "Diamond Sprinkler",
+  "block.sprinklerz.netherite_sprinkler": "Netherite Sprinkler",
+  "itemGroup.sprinklerz": "Sprinklerz"
 }

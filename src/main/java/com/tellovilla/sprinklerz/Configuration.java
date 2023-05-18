@@ -16,6 +16,7 @@ public final class Configuration {
     private int IronFertDelay = 3000;
     private int GoldFertDelay = 1500;
 
+    private int DiamFertDelay = 1000;
     private int NethFertDelay = 750;
 
     private static final File CONFIG_FILE = new File(FabricLoader.getInstance().getConfigDir().toFile(), "sprinklerz.json");
@@ -75,5 +76,12 @@ public final class Configuration {
     }
     public void setNethFertDelay(int delay){
         NethFertDelay = delay;
+    }
+
+    public int getDiamFertDelay(){
+        return DiamFertDelay;
+    }
+    public void setDiamFertDelay(int delay){
+        DiamFertDelay = delay;
     }
 }

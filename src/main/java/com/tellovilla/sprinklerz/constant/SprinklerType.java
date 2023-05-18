@@ -6,6 +6,7 @@ public enum SprinklerType {
     COPPER(1, SprinklerzMod.CONFIG.getCopperFertDelay()),
     IRON(2, SprinklerzMod.CONFIG.getIronFertDelay()),
     GOLD(3, SprinklerzMod.CONFIG.getGoldFertDelay()),
+    DIAMOND(3, SprinklerzMod.CONFIG.getDiamFertDelay()),
     NETHERITE(3, SprinklerzMod.CONFIG.getNethFertDelay());
     private int range;
     private int delay;

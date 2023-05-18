@@ -100,6 +100,15 @@ public class SprinklerBase extends BlockWithEntity implements BlockEntityProvide
             return checkType(type, ModBlockEntities.SPRINKLER_BLOCK_ENTITY, (world1, pos, state1, be) -> SprinklerBlockEntity.tick(world1, pos, state1, be));
         }
     }
+    public static class DiamondSprinkler extends SprinklerBase{
+        public DiamondSprinkler(){
+            super(SprinklerType.DIAMOND);
+        }
+        @Override
+        public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type){
+            return checkType(type, ModBlockEntities.SPRINKLER_BLOCK_ENTITY, (world1, pos, state1, be) -> SprinklerBlockEntity.tick(world1, pos, state1, be));
+        }
+    }
     public static class NetheriteSprinkler extends SprinklerBase{
         public NetheriteSprinkler(){
             super(SprinklerType.NETHERITE);

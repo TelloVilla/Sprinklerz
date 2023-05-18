@@ -16,6 +16,7 @@ public class SprinklerzModClient implements ClientModInitializer {
         GeoItemRenderer.registerItemRenderer(ModBlocks.COPPER_SPRINKLER_ITEM, new SprinklerBaseItemRenderer());
         GeoItemRenderer.registerItemRenderer(ModBlocks.IRON_SPRINKLER_ITEM, new SprinklerBaseItemRenderer());
         GeoItemRenderer.registerItemRenderer(ModBlocks.GOLD_SPRINKLER_ITEM, new SprinklerBaseItemRenderer());
+        GeoItemRenderer.registerItemRenderer(ModBlocks.DIAMOND_SPRINKLER_ITEM, new SprinklerBaseItemRenderer());
         GeoItemRenderer.registerItemRenderer(ModBlocks.NETHERITE_SPRINKLER_ITEM, new SprinklerBaseItemRenderer());
     }
 }

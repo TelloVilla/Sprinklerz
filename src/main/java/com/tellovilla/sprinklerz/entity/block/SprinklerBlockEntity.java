@@ -41,6 +41,10 @@ public class SprinklerBlockEntity extends BlockEntity implements IAnimatable {
             this.type = SprinklerType.GOLD;
             this.timer = type.getDelay();
             this.timerMax = type.getDelay();
+        }else if(block instanceof SprinklerBase.DiamondSprinkler){
+            this.type = SprinklerType.DIAMOND;
+            this.timer = type.getDelay();
+            this.timerMax = type.getDelay();
         }else if(block instanceof SprinklerBase.NetheriteSprinkler){
             this.type = SprinklerType.NETHERITE;
             this.timer = type.getDelay();
