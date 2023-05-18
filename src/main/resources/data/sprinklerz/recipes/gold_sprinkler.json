@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "IBI",
+    "PPP"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:gold_block"
+    },
+    "I": {
+      "item": "minecraft:gold_ingot"
+    },
+    "B": {
+      "item": "minecraft:bone_block"
+    },
+    "P": {
+      "item": "minecraft:polished_blackstone_slab"
+    }
+  },
+  "result": {
+    "item": "sprinklerz:gold_sprinkler",
+    "count": 1
+  }
+}

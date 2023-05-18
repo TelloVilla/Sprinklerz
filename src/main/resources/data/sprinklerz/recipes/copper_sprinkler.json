@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "IBI",
+    "PPP"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:copper_block"
+    },
+    "I": {
+      "item": "minecraft:copper_ingot"
+    },
+    "B": {
+      "item": "minecraft:bone_block"
+    },
+    "P": {
+      "item": "minecraft:polished_blackstone_slab"
+    }
+  },
+  "result": {
+    "item": "sprinklerz:copper_sprinkler",
+    "count": 1
+  }
+}

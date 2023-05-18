@@ -1,0 +1,30 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.sprinkler.idle": {
+			"loop": true,
+			"animation_length": 0.66667,
+			"bones": {
+				"sprinkler_head": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [0, -45, 0]
+						},
+						"0.3333": {
+							"vector": [0, -90, 0]
+						},
+						"0.5": {
+							"vector": [0, -135, 0]
+						},
+						"0.6667": {
+							"vector": [0, -180, 0]
+						}
+					}
+				}
+			}
+		}
+	}
+}
