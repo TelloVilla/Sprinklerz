@@ -43,16 +43,18 @@ public interface SprinklerzRegistry {
     RegistryObject<Block> COPPER_SPRINKLER = BLOCK_REGISTRY.register("copper_sprinkler", SprinklerBase.CopperSprinkler::new);
     RegistryObject<Block> IRON_SPRINKLER = BLOCK_REGISTRY.register("iron_sprinkler", SprinklerBase.IronSprinkler::new);
     RegistryObject<Block> GOLD_SPRINKLER = BLOCK_REGISTRY.register("gold_sprinkler", SprinklerBase.GoldSprinkler::new);
+    RegistryObject<Block> DIAMOND_SPRINKLER = BLOCK_REGISTRY.register("diamond_sprinkler", SprinklerBase.DiamondSprinkler::new);
     RegistryObject<Block> NETHERITE_SPRINKLER = BLOCK_REGISTRY.register("netherite_sprinkler", SprinklerBase.NetheriteSprinkler::new);
 
     //Block Items
     RegistryObject<Item> COPPER_SPRINKLER_ITEM = ITEM_REGISTRY.register("copper_sprinkler", ()-> new SprinklerBaseItem(COPPER_SPRINKLER.get(), new Item.Settings().group(ITEM_GROUP), SprinklerType.COPPER));
     RegistryObject<Item> IRON_SPRINKLER_ITEM = ITEM_REGISTRY.register("iron_sprinkler", ()-> new SprinklerBaseItem(IRON_SPRINKLER.get(), new Item.Settings().group(ITEM_GROUP), SprinklerType.IRON));
     RegistryObject<Item> GOLD_SPRINKLER_ITEM = ITEM_REGISTRY.register("gold_sprinkler", ()-> new SprinklerBaseItem(GOLD_SPRINKLER.get(), new Item.Settings().group(ITEM_GROUP), SprinklerType.GOLD));
+    RegistryObject<Item> DIAMOND_SPRINKLER_ITEM = ITEM_REGISTRY.register("diamond_sprinkler", ()-> new SprinklerBaseItem(DIAMOND_SPRINKLER.get(), new Item.Settings().group(ITEM_GROUP), SprinklerType.DIAMOND));
     RegistryObject<Item> NETHERITE_SPRINKLER_ITEM = ITEM_REGISTRY.register("netherite_sprinkler", ()-> new SprinklerBaseItem(NETHERITE_SPRINKLER.get(), new Item.Settings().group(ITEM_GROUP), SprinklerType.NETHERITE));
 
     //Block Entity Types
-    RegistryObject<BlockEntityType<SprinklerBlockEntity>> SPRINKLER_BLOCK_ENTITY = BLOCK_ENTITY_REGISTRY.register("sprinkler_block_entity", ()-> BlockEntityType.Builder.create(SprinklerBlockEntity::new, COPPER_SPRINKLER.get(), IRON_SPRINKLER.get(), GOLD_SPRINKLER.get(), NETHERITE_SPRINKLER.get()).build(null));
+    RegistryObject<BlockEntityType<SprinklerBlockEntity>> SPRINKLER_BLOCK_ENTITY = BLOCK_ENTITY_REGISTRY.register("sprinkler_block_entity", ()-> BlockEntityType.Builder.create(SprinklerBlockEntity::new, COPPER_SPRINKLER.get(), IRON_SPRINKLER.get(), GOLD_SPRINKLER.get(), DIAMOND_SPRINKLER.get(), NETHERITE_SPRINKLER.get()).build(null));
 
 
 

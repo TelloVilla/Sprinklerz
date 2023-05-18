@@ -11,6 +11,7 @@ public class SprinklerBaseItemModel extends AnimatedGeoModel<SprinklerBaseItem> 
     private static final Identifier textureResource = new Identifier(SprinklerzMod.MOD_ID, "textures/blocks/copper_sprinkler.png");
     private static final Identifier ironTextureResource = new Identifier(SprinklerzMod.MOD_ID, "textures/blocks/iron_sprinkler.png");
     private static final Identifier goldTextureResource = new Identifier(SprinklerzMod.MOD_ID, "textures/blocks/gold_sprinkler.png");
+    private static final Identifier diamondTextureResource = new Identifier(SprinklerzMod.MOD_ID, "textures/blocks/diamond_sprinkler.png");
     private static final Identifier netheriteTextureResource = new Identifier(SprinklerzMod.MOD_ID, "textures/blocks/netherite_sprinkler.png");
     private static final Identifier animationResource = new Identifier(SprinklerzMod.MOD_ID, "animations/sprinkler.animation.json");
 
@@ -25,6 +26,8 @@ public class SprinklerBaseItemModel extends AnimatedGeoModel<SprinklerBaseItem> 
             return ironTextureResource;
         } else if (object.type == SprinklerType.GOLD) {
             return goldTextureResource;
+        } else if (object.type == SprinklerType.DIAMOND) {
+            return diamondTextureResource;
         } else if (object.type == SprinklerType.NETHERITE) {
             return netheriteTextureResource;
         }

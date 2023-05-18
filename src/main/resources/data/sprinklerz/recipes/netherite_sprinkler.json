@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "sprinklerz:gold_sprinkler"
+    "item": "sprinklerz:diamond_sprinkler"
   },
   "addition": {
     "item": "minecraft:netherite_ingot"
