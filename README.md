@@ -1,3 +1,3 @@
 # Sprinklerz
 
-A Mod to speed up crop growth
+A Minecraft mod to speed up crop growth
