@@ -26,7 +26,7 @@ public class SprinklerBase extends BlockWithEntity implements BlockEntityProvide
 
     private SprinklerType type;
     public SprinklerBase(SprinklerType type){
-        super(FabricBlockSettings.copyOf(Blocks.DIRT).ticksRandomly().sounds(BlockSoundGroup.COPPER));
+        super(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).ticksRandomly().sounds(BlockSoundGroup.COPPER));
         this.type = type;
     }
 

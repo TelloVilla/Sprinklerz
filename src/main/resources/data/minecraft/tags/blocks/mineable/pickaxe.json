@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "sprinklerz:copper_sprinkler",
+    "sprinklerz:iron_sprinkler",
+    "sprinklerz:gold_sprinkler",
+    "sprinklerz:diamond_sprinkler",
+    "sprinklerz:netherite_sprinkler"
+  ]
+}
