@@ -4,8 +4,8 @@ import com.tellovilla.sprinklerz.SprinklerzMod;
 
 public enum SprinklerType {
     COPPER(1, SprinklerzMod.CONFIG.getCopperFertDelay()),
-    IRON(2, SprinklerzMod.CONFIG.getIronFertDelay()),
-    GOLD(3, SprinklerzMod.CONFIG.getGoldFertDelay()),
+    IRON(1, SprinklerzMod.CONFIG.getIronFertDelay()),
+    GOLD(2, SprinklerzMod.CONFIG.getGoldFertDelay()),
     DIAMOND(3, SprinklerzMod.CONFIG.getDiamFertDelay()),
     NETHERITE(3, SprinklerzMod.CONFIG.getNethFertDelay());
     private int range;

@@ -3,20 +3,23 @@
   "pattern": [
     " C ",
     "IBI",
-    "PPP"
+    "TPT"
   ],
   "key": {
     "C": {
       "item": "minecraft:diamond_block"
     },
     "I": {
-      "item": "minecraft:diamond"
+      "item": "minecraft:water_bucket"
     },
     "B": {
       "item": "minecraft:bone_block"
     },
     "P": {
-      "item": "minecraft:polished_blackstone_slab"
+      "item": "minecraft:stone"
+    },
+    "T": {
+      "item": "minecraft:blackstone"
     }
   },
   "result": {
