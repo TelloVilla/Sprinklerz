@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class FarmlandBlockMixin {
     @Inject(method = "isWaterNearby", at=@At("HEAD"), cancellable = true)
     private static void isWaterNearby(WorldView world, BlockPos pos, CallbackInfoReturnable<Boolean> cir){
-        for(BlockPos blockPos : BlockPos.iterate(pos.add(-6, 1, -6), pos.add(6, 1, 6))){
+        for(BlockPos blockPos : BlockPos.iterate(pos.add(-4, 1, -4), pos.add(4, 1, 4))){
             if(world.getBlockState(blockPos).getBlock() instanceof SprinklerBase){
                 cir.setReturnValue(true);
                 cir.cancel();
