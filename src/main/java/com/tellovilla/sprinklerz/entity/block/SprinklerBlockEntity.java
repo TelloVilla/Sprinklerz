@@ -68,7 +68,7 @@ public class SprinklerBlockEntity extends BlockEntity implements IAnimatable {
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, SprinklerBlockEntity be) {
-        if(world.isClient()){
+        if(world.isClient() || !SprinklerzMod.CONFIG.getBoneMealEffect()){
             return;
         }
         if(be.timer > 0){
@@ -96,8 +96,11 @@ public class SprinklerBlockEntity extends BlockEntity implements IAnimatable {
 
 
     private <E extends BlockEntity & IAnimatable>PlayState predicate(AnimationEvent<E> event){
-        event.getController().transitionLengthTicks = 0;
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.sprinkler.idle", ILoopType.EDefaultLoopTypes.LOOP));
+        if(!this.getWorld().isReceivingRedstonePower(this.getPos())){
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.sprinkler.idle", ILoopType.EDefaultLoopTypes.LOOP));
+        }else{
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.sprinkler.idle", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+        }
         return PlayState.CONTINUE;
     }
 

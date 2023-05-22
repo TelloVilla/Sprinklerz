@@ -8,8 +8,12 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -24,9 +28,35 @@ import net.minecraft.world.World;
 public class SprinklerBase extends BlockWithEntity implements BlockEntityProvider {
 
     private SprinklerType type;
+
+    //TODO: Find a better way to track an active redstone signal
+    public static final BooleanProperty LIT = Properties.LIT;
     public SprinklerBase(SprinklerType type){
         super(AbstractBlock.Settings.copy(Blocks.BLACKSTONE).ticksRandomly().sounds(BlockSoundGroup.COPPER));
         this.type = type;
+    }
+
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder){
+        builder.add(LIT);
+    }
+
+    @Override
+    public void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify){
+        if(!world.isClient){
+            boolean active = state.get(LIT);
+            if(world.isReceivingRedstonePower(pos) && active){
+                world.setBlockState(pos, state.cycle(LIT), 2);
+            }else if(!world.isReceivingRedstonePower(pos) && !active ){
+                world.setBlockState(pos, state.cycle(LIT), 2);
+            }
+        }
+    }
+
+
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx){
+        return this.getDefaultState().with(LIT, !(ctx.getWorld().isReceivingRedstonePower(ctx.getBlockPos())));
     }
 
     @Override
@@ -44,7 +74,7 @@ public class SprinklerBase extends BlockWithEntity implements BlockEntityProvide
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random){
         double radius = 0.35 * type.getRange();
         int spirals = 4;
-        if(random.nextFloat() < 0.1f){
+        if(state.get(LIT) && random.nextFloat() < 0.1f){
             //world.addParticle(ParticleTypes.FISHING, pos.getX() + 0.5d, pos.getY() + 0.6d, pos.getZ() + 0.5d, 0, 0.1d, 0);
             for(int j = 0; j < spirals; j++){
                 for(double i = 0d; i < 8d; i += 1d){
