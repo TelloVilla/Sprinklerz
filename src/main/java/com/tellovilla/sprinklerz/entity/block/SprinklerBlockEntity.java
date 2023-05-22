@@ -8,6 +8,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -66,7 +67,7 @@ public class SprinklerBlockEntity extends BlockEntity implements IAnimatable {
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, SprinklerBlockEntity be) {
-        if(world.isClient()){
+        if(world.isClient() || !SprinklerzMod.CONFIG.getBoneMealEffect()){
             return;
         }
         if(be.timer > 0){
@@ -92,7 +93,11 @@ public class SprinklerBlockEntity extends BlockEntity implements IAnimatable {
 
 
     private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event){
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.sprinkler.idle", ILoopType.EDefaultLoopTypes.LOOP));
+        if(!this.getWorld().isReceivingRedstonePower(this.getPos())){
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.sprinkler.idle", ILoopType.EDefaultLoopTypes.LOOP));
+        }else{
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.sprinkler.idle", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+        }
         return PlayState.CONTINUE;
     }
 

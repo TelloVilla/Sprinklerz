@@ -3,7 +3,9 @@ package com.tellovilla.sprinklerz.client.renderer.blockentity;
 import com.tellovilla.sprinklerz.SprinklerzMod;
 import com.tellovilla.sprinklerz.constant.SprinklerType;
 import com.tellovilla.sprinklerz.entity.block.SprinklerBlockEntity;
+import net.minecraft.block.BlockState;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.World;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SprinklerBaseModel extends AnimatedGeoModel<SprinklerBlockEntity> {
@@ -15,6 +17,8 @@ public class SprinklerBaseModel extends AnimatedGeoModel<SprinklerBlockEntity> {
 
     private static final Identifier netheriteTextureResource = new Identifier(SprinklerzMod.MOD_ID, "textures/blocks/netherite_sprinkler.png");
     private static final Identifier animationResource = new Identifier(SprinklerzMod.MOD_ID, "animations/sprinkler.animation.json");
+    private static final Identifier idleAnimationResource = new Identifier(SprinklerzMod.MOD_ID, "animations/sprinkler_idle.animation.json");
+
 
     @Override
     public Identifier getModelResource(SprinklerBlockEntity object) {
@@ -37,6 +41,11 @@ public class SprinklerBaseModel extends AnimatedGeoModel<SprinklerBlockEntity> {
 
     @Override
     public Identifier getAnimationResource(SprinklerBlockEntity animatable) {
-        return animationResource;
+        World world = animatable.getWorld();
+        if(!world.isReceivingRedstonePower(animatable.getPos())){
+            return animationResource;
+        }
+        return idleAnimationResource;
+
     }
 }

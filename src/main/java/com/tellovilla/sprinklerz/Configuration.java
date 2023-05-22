@@ -19,6 +19,8 @@ public final class Configuration {
     private int DiamFertDelay = 1000;
     private int NethFertDelay = 750;
 
+    private boolean BoneMealEffect = true;
+
     private static final File CONFIG_FILE = new File(FabricLoader.getInstance().getConfigDir().toFile(), "sprinklerz.json");
 
     public Configuration(){
@@ -83,5 +85,13 @@ public final class Configuration {
     }
     public void setDiamFertDelay(int delay){
         DiamFertDelay = delay;
+    }
+
+    public boolean getBoneMealEffect(){
+        return BoneMealEffect;
+    }
+
+    public void setBoneMealEffect(boolean status){
+        BoneMealEffect = status;
     }
 }
