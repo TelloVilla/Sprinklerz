@@ -3,11 +3,16 @@ package com.tellovilla.sprinklerz.constant;
 import com.tellovilla.sprinklerz.SprinklerzMod;
 
 public enum SprinklerType {
-    COPPER(1, SprinklerzMod.CONFIG.getCopperFertDelay()),
-    IRON(1, SprinklerzMod.CONFIG.getIronFertDelay()),
-    GOLD(2, SprinklerzMod.CONFIG.getGoldFertDelay()),
-    DIAMOND(3, SprinklerzMod.CONFIG.getDiamFertDelay()),
-    NETHERITE(3, SprinklerzMod.CONFIG.getNethFertDelay());
+    COPPER(SprinklerzMod.CONFIG.getCopperRadius(),
+            SprinklerzMod.CONFIG.getCopperFertDelay()),
+    IRON(SprinklerzMod.CONFIG.getIronRadius(),
+            SprinklerzMod.CONFIG.getIronFertDelay()),
+    GOLD(SprinklerzMod.CONFIG.getGoldRadius(),
+            SprinklerzMod.CONFIG.getGoldFertDelay()),
+    DIAMOND(SprinklerzMod.CONFIG.getDiamondRadius(),
+            SprinklerzMod.CONFIG.getDiamFertDelay()),
+    NETHERITE(SprinklerzMod.CONFIG.getNetheriteRadius(),
+            SprinklerzMod.CONFIG.getNethFertDelay());
     private int range;
     private int delay;
     private SprinklerType(int range, int delay){
@@ -16,7 +21,14 @@ public enum SprinklerType {
     }
 
     public int getRange(){
+        if(this.range < 1 || this.range > 3){
+            return 1;
+        }
         return range;
     }
-    public int getDelay() {return delay; }
+    public int getDelay() {
+        if(this.delay < 200){
+            return 200;
+        }
+        return delay; }
 }

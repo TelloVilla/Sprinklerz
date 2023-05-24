@@ -1,6 +1,8 @@
 package com.tellovilla.sprinklerz.mixin;
 
+import com.tellovilla.sprinklerz.SprinklerzMod;
 import com.tellovilla.sprinklerz.block.SprinklerBase;
+import com.tellovilla.sprinklerz.constant.SprinklerType;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FarmlandBlock;
@@ -19,9 +21,30 @@ public class FarmlandBlockMixin {
         for(BlockPos blockPos : BlockPos.iterate(pos.add(-4, 1, -4), pos.add(4, 1, 4))){
             BlockState state = world.getBlockState(blockPos);
             Block block = state.getBlock();
-            if(block instanceof SprinklerBase && state.get(Properties.LIT)){
-                cir.setReturnValue(true);
-                cir.cancel();
+            if(block instanceof SprinklerBase){
+                if(state.get(Properties.LIT)){
+                    if(block instanceof SprinklerBase.CopperSprinkler && pos.isWithinDistance(blockPos, SprinklerType.COPPER.getRange() + 1)){
+                        cir.setReturnValue(true);
+                        cir.cancel();
+                    }
+                    else if(block instanceof SprinklerBase.IronSprinkler && pos.isWithinDistance(blockPos, SprinklerType.IRON.getRange() + 1)){
+                        cir.setReturnValue(true);
+                        cir.cancel();
+                    }
+                    else if(block instanceof SprinklerBase.GoldSprinkler && pos.isWithinDistance(blockPos, SprinklerType.GOLD.getRange() + 1)){
+                        cir.setReturnValue(true);
+                        cir.cancel();
+                    }
+                    else if(block instanceof SprinklerBase.DiamondSprinkler && pos.isWithinDistance(blockPos, SprinklerType.DIAMOND.getRange() + 1)){
+                        cir.setReturnValue(true);
+                        cir.cancel();
+                    }
+                    else if(block instanceof SprinklerBase.NetheriteSprinkler && pos.isWithinDistance(blockPos, SprinklerType.NETHERITE.getRange() + 1)){
+                        cir.setReturnValue(true);
+                        cir.cancel();
+                    }
+
+                }
             }
         }
 
