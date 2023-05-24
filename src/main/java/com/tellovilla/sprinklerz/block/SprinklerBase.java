@@ -23,6 +23,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 
 
 public class SprinklerBase extends BlockWithEntity implements BlockEntityProvider {
@@ -87,6 +88,13 @@ public class SprinklerBase extends BlockWithEntity implements BlockEntityProvide
 
         }
 
+    }
+    @Override
+    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos){
+        if(!world.getBlockState(pos.up()).isAir()){
+            return false;
+        }
+        return true;
     }
 
     @Override

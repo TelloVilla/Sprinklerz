@@ -11,13 +11,20 @@ import java.nio.file.Files;
 
 public final class Configuration {
 
-    //Sprinkler delay between growth
+    //default sprinkler delay between growth and Radius
     private int CopperFertDelay = 6000;
+    private int CopperRadius = 1;
+
     private int IronFertDelay = 3000;
+    private int IronRadius = 1;
     private int GoldFertDelay = 1500;
+    private int GoldRadius = 2;
 
     private int DiamFertDelay = 1000;
+    private int DiamondRadius = 3;
     private int NethFertDelay = 750;
+    private int NetheriteRadius = 3;
+
 
     private boolean BoneMealEffect = true;
 
@@ -61,24 +68,41 @@ public final class Configuration {
         CopperFertDelay = delay;
     }
 
+    public int getCopperRadius(){
+        return CopperRadius;
+    }
+    public void setCopperRadius(int radius){CopperRadius = radius;}
+
     public int getIronFertDelay(){
         return IronFertDelay;
     }
     public void setIronFertDelay(int delay){
         IronFertDelay = delay;
     }
+    public int getIronRadius(){
+        return IronRadius;
+    }
+    public void setIronRadius(int radius){IronRadius = radius;}
     public int getGoldFertDelay(){
         return GoldFertDelay;
     }
     public void setGoldFertDelay(int delay){
         GoldFertDelay = delay;
     }
+    public int getGoldRadius(){
+        return GoldRadius;
+    }
+    public void setGoldRadius(int radius){GoldRadius = radius;}
     public int getNethFertDelay(){
         return NethFertDelay;
     }
     public void setNethFertDelay(int delay){
         NethFertDelay = delay;
     }
+    public int getNetheriteRadius(){
+        return NetheriteRadius;
+    }
+    public void setNetheriteRadius(int radius){NetheriteRadius = radius;}
 
     public int getDiamFertDelay(){
         return DiamFertDelay;
@@ -86,6 +110,10 @@ public final class Configuration {
     public void setDiamFertDelay(int delay){
         DiamFertDelay = delay;
     }
+    public int getDiamondRadius(){
+        return DiamondRadius;
+    }
+    public void setDiamondRadius(int radius){DiamondRadius = radius;}
 
     public boolean getBoneMealEffect(){
         return BoneMealEffect;
@@ -94,4 +122,6 @@ public final class Configuration {
     public void setBoneMealEffect(boolean status){
         BoneMealEffect = status;
     }
+
+
 }

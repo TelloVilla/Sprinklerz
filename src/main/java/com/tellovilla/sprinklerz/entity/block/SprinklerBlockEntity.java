@@ -68,7 +68,7 @@ public class SprinklerBlockEntity extends BlockEntity implements IAnimatable {
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, SprinklerBlockEntity be) {
-        if(world.isClient() || !SprinklerzMod.CONFIG.getBoneMealEffect()){
+        if(world.isClient() || !SprinklerzMod.CONFIG.getBoneMealEffect() || be.timerMax == 0){
             return;
         }
         if(be.timer > 0){
@@ -83,7 +83,7 @@ public class SprinklerBlockEntity extends BlockEntity implements IAnimatable {
         for (BlockPos blockPos : BlockPos.iterate(pos.add(-range, 0, -range), pos.add(range, 0, range))) {
             BlockState blockState = world.getBlockState(blockPos);
             Block block = blockState.getBlock();
-            if (block instanceof Fertilizable && ForgeHooks.onCropsGrowPre(world, blockPos, blockState, true)) {
+            if (block instanceof Fertilizable && pos.isWithinDistance(blockPos, (be.type.getRange() + 1)) && ForgeHooks.onCropsGrowPre(world, blockPos, blockState, true)) {
                 Fertilizable growable = (Fertilizable) block;
                 growable.grow(currWorld, world.getRandom(), blockPos, blockState);
                 world.syncWorldEvent(2005, blockPos, 0);
