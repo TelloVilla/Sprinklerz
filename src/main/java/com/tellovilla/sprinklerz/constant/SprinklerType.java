@@ -27,8 +27,5 @@ public enum SprinklerType {
         return range;
     }
     public int getDelay() {
-        if(this.delay < 200){
-            return 200;
-        }
         return delay; }
 }

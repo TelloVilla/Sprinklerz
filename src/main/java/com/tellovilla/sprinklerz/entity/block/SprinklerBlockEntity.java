@@ -67,7 +67,7 @@ public class SprinklerBlockEntity extends BlockEntity implements IAnimatable {
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, SprinklerBlockEntity be) {
-        if(world.isClient() || !SprinklerzMod.CONFIG.getBoneMealEffect()){
+        if(world.isClient() || !SprinklerzMod.CONFIG.getBoneMealEffect() || be.timerMax == 0){
             return;
         }
         if(be.timer > 0){
