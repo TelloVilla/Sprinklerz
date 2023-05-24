@@ -10,6 +10,7 @@ import net.minecraft.block.Fertilizable;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
@@ -68,7 +69,7 @@ public class SprinklerBlockEntity extends BlockEntity implements IAnimatable {
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, SprinklerBlockEntity be) {
-        if(world.isClient() || !SprinklerzMod.CONFIG.getBoneMealEffect() || be.timerMax == 0){
+        if(world.isClient() || !SprinklerzMod.CONFIG.getBoneMealEffect() || be.timerMax == 0 || !state.get(Properties.LIT)){
             return;
         }
         if(be.timer > 0){
