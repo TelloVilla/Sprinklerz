@@ -1,8 +1,13 @@
 Changelog:
 
+Version: 0.3.2
+
+- increased max sprinkler radius to 5
+- lowered default recipe costs
+
 Version: 0.3.1
 
--Fixed copper line showing up on all sprinkler models
+- Fixed copper line showing up on all sprinkler models
 
 Version: 0.3.0
 

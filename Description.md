@@ -15,7 +15,7 @@ a direct redstone signal will disable the sprinkler including the hydration and 
 
 ## Config Options:
 Delete the config to show new options if missing
- - Radius is for hydration and the bone meal effect range (Min: 1, Max: 3)
+ - Radius is for hydration and the bone meal effect range (Min: 1, Max: 5)
  - Delay is the amount of time in ticks before a growth boost
    - There is about 20 ticks per second depending on the server so for 1 minute it would be (60 sec * 20 ticks) for 1200 ticks
    - delay can be set to 0 to turn off the bone meal effect for that tier only

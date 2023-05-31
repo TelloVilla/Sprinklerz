@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class FarmlandBlockMixin {
     @Inject(method = "isWaterNearby", at=@At("HEAD"), cancellable = true)
     private static void isWaterNearby(WorldView world, BlockPos pos, CallbackInfoReturnable<Boolean> cir){
-        for(BlockPos blockPos : BlockPos.iterate(pos.add(-4, 1, -4), pos.add(4, 1, 4))){
+        for(BlockPos blockPos : BlockPos.iterate(pos.add(-SprinklerzMod.CONFIG.maxRadius(), 1, -SprinklerzMod.CONFIG.maxRadius()), pos.add(SprinklerzMod.CONFIG.maxRadius(), 1, SprinklerzMod.CONFIG.maxRadius()))){
             BlockState state = world.getBlockState(blockPos);
             Block block = state.getBlock();
             if(block instanceof SprinklerBase){
