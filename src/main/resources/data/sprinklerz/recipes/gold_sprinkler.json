@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " C ",
+    "CCC",
     "IBI",
     "TPT"
   ],
   "key": {
     "C": {
-      "item": "minecraft:gold_block"
+      "item": "minecraft:gold_ingot"
     },
     "I": {
       "item": "minecraft:water_bucket"

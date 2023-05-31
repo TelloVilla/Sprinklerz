@@ -21,7 +21,7 @@ public enum SprinklerType {
     }
 
     public int getRange(){
-        if(this.range < 1 || this.range > 3){
+        if(this.range < 1 || this.range > 5){
             return 1;
         }
         return range;

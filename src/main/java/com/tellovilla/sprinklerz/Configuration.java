@@ -7,7 +7,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
+import java.lang.reflect.Array;
 import java.nio.file.Files;
+import java.util.Arrays;
 
 public final class Configuration {
 
@@ -16,14 +18,14 @@ public final class Configuration {
     private int CopperRadius = 1;
 
     private int IronFertDelay = 3000;
-    private int IronRadius = 1;
+    private int IronRadius = 2;
     private int GoldFertDelay = 1500;
-    private int GoldRadius = 2;
+    private int GoldRadius = 3;
 
     private int DiamFertDelay = 1000;
     private int DiamondRadius = 3;
     private int NethFertDelay = 750;
-    private int NetheriteRadius = 3;
+    private int NetheriteRadius = 4;
 
 
     private boolean BoneMealEffect = true;
@@ -121,6 +123,13 @@ public final class Configuration {
 
     public void setBoneMealEffect(boolean status){
         BoneMealEffect = status;
+    }
+
+    public int maxRadius(){
+        int [] radii = new int[]{CopperRadius, IronRadius, GoldRadius, DiamondRadius, NetheriteRadius};
+        Arrays.sort(radii);
+        return radii[radii.length-1];
+
     }
 
 
