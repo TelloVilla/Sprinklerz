@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "sprinklerz",
+  "version": "${version}",
+  "name": "Hydrate your crops",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "TelloVilla"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "MIT",
+  "icon": "assets/sprinklerz/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.tellovilla.sprinklerz.fabric.SprinklerzModFabric"
+    ],
+    "client": [
+      "com.tellovilla.sprinklerz.fabric.SprinklerzModFabricClient::init"
+    ]
+  },
+  "mixins": [
+    "sprinklerz.mixins.json",
+    "sprinklerz-common.mixins.json"
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.20.1",
+    "architectury": ">=9.1.12",
+    "geckolib": ">=4.2.2"
+  }
+}

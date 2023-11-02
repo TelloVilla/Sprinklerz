@@ -1,0 +1,42 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+#issueTrackerURL = ""
+license = "MIT"
+
+[[mods]]
+modId = "sprinklerz"
+version = "${version}"
+displayName = "Sprinklerz"
+authors = "TelloVilla"
+description = '''
+Hydrate and accelerate your crops
+'''
+#logoFile = ""
+
+[[dependencies.sprinklerz]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.sprinklerz]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.sprinklerz]]
+modId = "architectury"
+mandatory = true
+versionRange = "[9.1.12,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.sprinklerz]]
+modId="geckolib"
+mandatory=true
+versionRange="[4.2.2,)"
+ordering="NONE"
+side="BOTH"

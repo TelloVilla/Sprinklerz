@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "IBI",
+    "TPT"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "I": {
+      "item": "minecraft:water_bucket"
+    },
+    "B": {
+      "item": "minecraft:bone_block"
+    },
+    "P": {
+      "item": "minecraft:stone"
+    },
+    "T": {
+      "item": "minecraft:blackstone"
+    }
+
+  },
+  "result": {
+    "item": "sprinklerz:copper_sprinkler",
+    "count": 1
+  }
+}
