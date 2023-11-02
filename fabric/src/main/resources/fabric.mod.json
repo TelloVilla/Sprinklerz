@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "id": "sprinklerz",
   "version": "${version}",
-  "name": "Hydrate your crops",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Sprinklerz",
+  "description": "A mod to speed up and hydrate your crops",
   "authors": [
     "TelloVilla"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/TelloVilla/Sprinklerz/",
+    "sources": "https://github.com/TelloVilla/Sprinklerz/"
   },
   "license": "MIT",
   "icon": "assets/sprinklerz/icon.png",
