@@ -1,5 +1,10 @@
 Changelog:
 
+Version: 0.5.1
+
+- fixed crash related to not checking if fertilizable was able to continue being fertilized (e.g. cocoa beans)
+- removed resource files related to a mulch test item
+
 Version: 0.5
 
 - Sprinklers can now be placed on ceilings and hydrate/grow crops below

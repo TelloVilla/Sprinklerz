@@ -125,7 +125,7 @@ public class SprinklerBlockEntity extends BlockEntity implements GeoBlockEntity 
         for (BlockPos blockPos : BlockPos.iterate(belowPos.add(-range, 0, -range), belowPos.add(range, 0, range))) {
             BlockState blockState = world.getBlockState(blockPos);
             Block block = blockState.getBlock();
-            if (block instanceof Fertilizable && pos.isWithinDistance(blockPos, (be.type.getRange() + 1))) {
+            if (block instanceof Fertilizable && ((Fertilizable) block).isFertilizable(world, blockPos, blockState, false) && pos.isWithinDistance(blockPos, (be.type.getRange() + 1))) {
                 Fertilizable growable = (Fertilizable) block;
                 growable.grow(currWorld, world.getRandom(), blockPos, blockState);
                 world.syncWorldEvent(2005, blockPos, 0);
